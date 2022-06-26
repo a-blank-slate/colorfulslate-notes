@@ -32,7 +32,7 @@ function App() {
     const newNote = {
       id: uuid(),
       body: "",
-      title: "untitled note",
+      title: "",
       lastModified: Date.now()
     }
     setNotes([newNote, ...notes])
