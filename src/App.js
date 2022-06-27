@@ -9,23 +9,42 @@ function App() {
   const [activeNote, setActiveNote] = useState(0);
 
   const fetchData = () => {
-    fetch('https://slate.the-colorful-slate.workers.dev', {
-      method: 'GET',
-    }).then(res => {
-      return res.json()
-    })
-      .then(data => setNotes(data))
-      .catch(error => console.log(error))
+    let hackingCode = prompt("Please enter hacking code", "");
+    if (hackingCode == null || hackingCode === "") {
+      alert("mandatory input")
+    } else {
+      fetch('https://slate.the-colorful-slate.workers.dev', {
+        method: 'GET',
+        headers: {
+          "hackingCode": hackingCode
+        }
+      }).then(res => {
+        return res.json()
+      }).then(data => setNotes(data))
+        .catch(error => console.log(error))
+    }
   }
 
   const sync = () => {
-    fetch('https://slate.the-colorful-slate.workers.dev', {
-      method: 'PUT',
-      body: JSON.stringify(notes)
-    }).then(res => {
-      return res.json()
-    }).then(data => alert('synced!'))
-      .catch(error => console.log(error))
+    let hackingCode = prompt("Please enter hacking code", "");
+    if (hackingCode == null || hackingCode === "") {
+      alert("mandatory input")
+    } else {
+      if (notes.length !== 0) {
+        fetch('https://slate.the-colorful-slate.workers.dev', {
+          method: 'PUT',
+          headers: {
+            "hackingCode": hackingCode
+          },
+          body: JSON.stringify(notes)
+        }).then(res => {
+          return res.json()
+        }).then(data => alert('synced!'))
+          .catch(error => console.log(error))
+      } else {
+        alert('Nothing to Sync!!');
+      }
+    }
   }
 
   const onAddNote = () => {
