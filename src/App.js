@@ -13,7 +13,7 @@ function App() {
     if (hackingCode == null || hackingCode === "") {
       alert("mandatory input")
     } else {
-      fetch('https://slate.the-colorful-slate.workers.dev', {
+      fetch(process.env.REACT_APP_WORKER_TODO_URL, {
         method: 'GET',
         headers: {
           "hackingCode": hackingCode
@@ -31,7 +31,7 @@ function App() {
       alert("mandatory input")
     } else {
       if (notes.length !== 0) {
-        fetch('https://slate.the-colorful-slate.workers.dev', {
+        fetch(process.env.REACT_APP_WORKER_TODO_URL, {
           method: 'PUT',
           headers: {
             "hackingCode": hackingCode
