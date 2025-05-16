@@ -6,9 +6,9 @@ export default function SideBar({ notes, onAddNote, onDeleteNote, activeNote, se
     <div className='app-sidebar'>
       <div className='app-sidebar-header'>
         <h1>Notes</h1>
-        <button onClick={fetchData}>Fetch</button>
-        <button onClick={sync}>Sync</button>
-        <button onClick={onAddNote}>Add</button>
+        <button onClick={fetchData}>Fetch Notes</button>
+        <button onClick={sync}>Save Changes</button>
+        <button onClick={onAddNote}>Add New Note</button>
       </div>
       <div className='app-sidebar-notes'>
         {sortedNotes.map((note) => (

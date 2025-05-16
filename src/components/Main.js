@@ -22,12 +22,6 @@ export default function Main({ activeNote, onUpdateNote }) {
           onChange={(e) => onEditField("body", e.target.value)} value={activeNote.body} />
       </div>
 
-      <div className='app-main-note-preview'>
-        <h1 className='preview-title'>{activeNote && activeNote.title}</h1>
-        <ReactMarkdown className='markdown-preview'>{activeNote && activeNote.body}
-        </ReactMarkdown>
-      </div>
-
     </div >
 
   )

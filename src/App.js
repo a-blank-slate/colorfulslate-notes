@@ -74,7 +74,7 @@ function App() {
     setNotes(updatedNotesArray)
   }
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: "url('/white-image.jpg')" }}>
       <SideBar notes={notes} onAddNote={onAddNote}
         onDeleteNote={onDeleteNote} activeNote={activeNote}
         setActiveNote={setActiveNote} fetchData={fetchData} sync={sync} />
